@@ -1,0 +1,166 @@
+:root {
+  color-scheme: dark;
+  --fundo: #14161a;
+  --painel: #1d2026;
+  --borda: #2c3038;
+  --texto: #e6e8eb;
+  --texto-suave: #9aa1ab;
+  --destaque: #f2b134;
+  --ok: #4cc38a;
+  --alerta: #e5884a;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 14px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background: var(--fundo);
+  color: var(--texto);
+  overflow: hidden;
+}
+
+/* Barra superior */
+
+.barra {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  height: 44px;
+  padding: 0 12px;
+  background: var(--painel);
+  border-bottom: 1px solid var(--borda);
+  flex: none;
+}
+
+.barra__titulo {
+  font-weight: 600;
+}
+
+.ferramentas {
+  display: flex;
+  gap: 4px;
+}
+
+.ferramentas button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 30px;
+  padding: 0 10px;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--texto);
+  font: inherit;
+  cursor: pointer;
+}
+
+.ferramentas button:hover {
+  background: #262a31;
+}
+
+.ferramentas button[aria-pressed='true'] {
+  border-color: var(--destaque);
+  color: var(--destaque);
+}
+
+kbd {
+  font: 11px ui-monospace, monospace;
+  color: var(--texto-suave);
+}
+
+.barra__zoom {
+  margin-left: auto;
+  color: var(--texto-suave);
+  font-variant-numeric: tabular-nums;
+}
+
+.conexao {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--texto-suave);
+}
+
+.conexao::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--texto-suave);
+}
+
+.conexao[data-estado='conectado']::before {
+  background: var(--ok);
+}
+
+.conexao[data-estado='offline'] {
+  color: var(--alerta);
+}
+
+.conexao[data-estado='offline']::before {
+  background: var(--alerta);
+}
+
+/* Mapa */
+
+.viewport {
+  position: relative;
+  flex: 1;
+  overflow: hidden;
+  touch-action: none;
+  user-select: none;
+  cursor: grab;
+}
+
+.viewport[data-ferramenta='regua'] {
+  cursor: crosshair;
+}
+
+.viewport--sobre-token {
+  cursor: pointer;
+}
+
+.viewport--espaco {
+  cursor: grab;
+}
+
+.viewport--agarrando {
+  cursor: grabbing;
+}
+
+.viewport canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+/* Aviso */
+
+.aviso {
+  position: fixed;
+  left: 50%;
+  bottom: 20px;
+  transform: translateX(-50%);
+  max-width: min(560px, calc(100vw - 32px));
+  padding: 10px 16px;
+  border: 1px solid var(--borda);
+  border-radius: 8px;
+  background: var(--painel);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.5);
+}
+
+.aviso[hidden] {
+  display: none;
+}

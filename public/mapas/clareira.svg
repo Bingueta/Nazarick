@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2100" height="1400" viewBox="0 0 2100 1400">
+  <!-- Mapa de exemplo: 30 × 20 quadrados de 70 px. -->
+  <defs>
+    <radialGradient id="grama" cx="50%" cy="50%" r="75%">
+      <stop offset="0" stop-color="#6f9a45"/>
+      <stop offset="1" stop-color="#4a7330"/>
+    </radialGradient>
+    <radialGradient id="agua" cx="45%" cy="40%" r="65%">
+      <stop offset="0" stop-color="#5fa8d3"/>
+      <stop offset="1" stop-color="#2f6f9a"/>
+    </radialGradient>
+    <g id="arvore">
+      <circle r="62" fill="#22401a" opacity=".35" cx="8" cy="10"/>
+      <circle r="58" fill="#2f5a22"/>
+      <circle r="40" fill="#3c6f2b" cx="-14" cy="-12"/>
+      <circle r="22" fill="#4d8636" cx="-20" cy="-20"/>
+    </g>
+    <g id="pedra">
+      <ellipse rx="34" ry="24" fill="#6d6a64"/>
+      <ellipse rx="22" ry="14" fill="#8c8880" cx="-6" cy="-6"/>
+    </g>
+  </defs>
+
+  <rect width="2100" height="1400" fill="url(#grama)"/>
+
+  <!-- Manchas de grama -->
+  <g fill="#7fae52" opacity=".35">
+    <ellipse cx="400" cy="300" rx="180" ry="90"/>
+    <ellipse cx="1500" cy="1100" rx="220" ry="110"/>
+    <ellipse cx="1100" cy="250" rx="160" ry="70"/>
+    <ellipse cx="300" cy="1150" rx="200" ry="80"/>
+  </g>
+
+  <!-- Trilha de terra -->
+  <path d="M -20 735 C 400 700, 600 820, 900 760 S 1400 560, 1650 640 S 1950 820, 2120 780"
+        fill="none" stroke="#9b7a4c" stroke-width="150" stroke-linecap="round"/>
+  <path d="M -20 735 C 400 700, 600 820, 900 760 S 1400 560, 1650 640 S 1950 820, 2120 780"
+        fill="none" stroke="#b39260" stroke-width="100" stroke-linecap="round"/>
+
+  <!-- Lago -->
+  <path d="M 1180 980 C 1250 900, 1450 890, 1560 960 S 1700 1160, 1580 1240 S 1260 1290, 1190 1200 S 1110 1050, 1180 980 Z"
+        fill="#2a5a7a"/>
+  <path d="M 1195 990 C 1260 915, 1445 905, 1548 970 S 1680 1150, 1570 1225 S 1270 1275, 1205 1190 S 1130 1055, 1195 990 Z"
+        fill="url(#agua)"/>
+  <g fill="none" stroke="#bfe3f5" stroke-width="4" opacity=".5" stroke-linecap="round">
+    <path d="M 1300 1040 q 40 -12 80 0"/>
+    <path d="M 1400 1130 q 50 -14 100 0"/>
+  </g>
+
+  <!-- Pedras -->
+  <use href="#pedra" x="1430" y="420"/>
+  <use href="#pedra" x="1490" y="455" transform="scale(1)"/>
+  <use href="#pedra" x="560" y="1020"/>
+  <use href="#pedra" x="1120" y="960"/>
+  <use href="#pedra" x="250" y="560"/>
+
+  <!-- Árvores na borda -->
+  <use href="#arvore" x="90" y="90"/>
+  <use href="#arvore" x="230" y="70"/>
+  <use href="#arvore" x="150" y="230"/>
+  <use href="#arvore" x="620" y="80"/>
+  <use href="#arvore" x="760" y="140"/>
+  <use href="#arvore" x="1300" y="90"/>
+  <use href="#arvore" x="1820" y="100"/>
+  <use href="#arvore" x="1990" y="180"/>
+  <use href="#arvore" x="1960" y="340"/>
+  <use href="#arvore" x="2010" y="1050"/>
+  <use href="#arvore" x="1880" y="1280"/>
+  <use href="#arvore" x="1000" y="1320"/>
+  <use href="#arvore" x="820" y="1260"/>
+  <use href="#arvore" x="100" y="1300"/>
+  <use href="#arvore" x="80" y="980"/>
+  <use href="#arvore" x="700" y="460"/>
+  <use href="#arvore" x="1150" y="470"/>
+</svg>
